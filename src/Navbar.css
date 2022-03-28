@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    background-color: #7238b4;
+    padding-right: 100px;
+
+    color: black;
+}
+
+.nav-item {
+    padding: 25px 50px;
+    margin: 0px 3px;
+}
+.active {
+    background-color: #6d6df8;
+    color: white;
+}
+.nav-item:active,
+.nav-item:hover {
+    background-color: #6d6df8;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.table {
+    width: 100%;
+}
+
+.table td,
+th {
+    border: 1px solid #0e0202;
+    text-align: left;
+    padding: 8px;
+}
+.table > tr > th {
+    border: 1px solid #0e0202;
+    text-align: left;
+    padding: 8px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.table > thead > tr > th {
+    border: 1px solid #0e0202;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: rgb(128, 130, 133);
+    color: white;
+}
