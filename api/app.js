@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
-// const cropRoute = require("./routes/crop");
+const cropRoute = require("./routes/crop");
 
 const cors = require("cors");
 
@@ -22,7 +22,7 @@ mongoose
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-// app.use("/api/crop", cropRoute);
+app.use("/api/crop", cropRoute);
 
 
 app.listen(process.env.PORT || 5000, () => {

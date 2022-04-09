@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const cropSchema = new mongoose.Schema(
   {
-    cropName: { type: String, required: true, unique: true },
+    cropName: { type: String, required: true },
     desc: { type: String, required: true },
     img: { type: String, required: true },
-    province: { type: Number },
+    province: { type: Array },
     marketPrice: { type: Number },
     farmerPrice: { type: Number },
     
