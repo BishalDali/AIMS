@@ -1,21 +1,22 @@
 const express = require('express');
-const router = express.Router();
-const User = require('../models/User')
-const CryptoJS = require('crypto-js')
-const jwt = require('jsonwebtoken')
+const router = express.Router();  //include router
+const User = require('../models/User') // include user
+const CryptoJS = require('crypto-js') // include CryptoJs
+const jwt = require('jsonwebtoken') // include JSON Web Token
 
 
-//register
+// Register
 
 router.get('/register',(req,res)=>{
     res.send("successful")
 })  
 
-router.post('/register', async (req,res)=>{
+// Get Register Data from front end and saves it to Database
+router.post('/register', async (req,res)=>{ 
     const newUser = new User({
          username: req.body.username,
          email: req.body.email,
-         password: CryptoJS.AES.encrypt(req.body.password,process.env.PASS_SEC.toString()),
+         password: CryptoJS.AES.encrypt(req.body.password,process.env.PASS_SEC.toString()), // Crypto-js encryption
     });
     try {
         const savedUser = await newUser.save();
@@ -33,7 +34,7 @@ router.post('/register', async (req,res)=>{
 
 
 //login
-
+//Get Data from login route and authenticate user
 router.post("/login", async (req,res) => {
      
     try {
@@ -44,13 +45,13 @@ router.post("/login", async (req,res) => {
           user.password,
           process.env.PASS_SEC
         );
-        const OriginalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+        const OriginalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);   //Crypto-js Decryption
     
         OriginalPassword !== req.body.password &&
           res.status(401).json("Wrong credentials!");
             const accessToken = jwt.sign({
                 id: user._id, 
-                isAdmin: user._isAdmin
+                isAdmin: user._isAdmin  //Checks Admin
             },
             process.env.JWT_SEC,
             {expiresIn:'3d'}

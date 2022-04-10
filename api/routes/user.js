@@ -5,16 +5,17 @@ const router = express.Router();
 
 
 //Update User Credentials
+//Takes user's id and updates whatever data they wants to update
 router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
     if (req.body.password) {
-        req.body.password = CryptoJS.AES.encrypt(
+        req.body.password = CryptoJS.AES.encrypt(  
           req.body.password,
           process.env.PASS_SEC
         ).toString();
       }
     
       try {
-        const updatedUser = await User.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate( // Finds and update data
           req.params.id,
           {
             $set: req.body,
@@ -27,18 +28,8 @@ router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
       }
     });
 
-router.get('/usertest',(req,res)=>{
-    res.send("This also sucessful")
-    console.log(req.body);
-})
 
-router.post('/userData',(req,res)=>{
-    const username = req.body.username
-    console.log(username);
-    res.send(username)
-})
-
-//DELETE
+//DELETE USER
 router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
     try {
       await User.findByIdAndDelete(req.params.id);

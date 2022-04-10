@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+//Crop's Schema
+// This is the schema of how the database stores the crop data 
 const cropSchema = new mongoose.Schema(
   {
     cropName: { type: String, required: true },
@@ -8,6 +10,7 @@ const cropSchema = new mongoose.Schema(
     province: { type: Array },
     marketPrice: { type: Number },
     farmerPrice: { type: Number },
+    phoneNumber: { type: Number},
     
   },
   { timestamps: true }
