@@ -67,6 +67,31 @@ router.get("/find/:id", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  //GET ALL Crops
+router.get("/", async (req, res) => {
+    const qNew = req.query.new;
+    const qCategory = req.query.category;
+    try {
+      let crops;
+  
+      if (qNew) {
+        products = await Product.find().sort({ createdAt: -1 }).limit(1);
+      } else if (qCategory) {
+        crops = await Crop.find({
+          categories: {
+            $in: [qCategory],
+          },
+        });
+      } else {
+        crops = await Crop.find();
+      }
+  
+      res.status(200).json(crops);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   
 
 module.exports = router;
