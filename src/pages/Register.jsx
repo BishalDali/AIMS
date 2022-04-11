@@ -96,17 +96,7 @@ const Register = () => {
           <Input placeholder="Mother's Name" />
           <Input placeholder="Spouse's Name" />
           <FilterText>Gender:</FilterText>
-          <Select name="Marital Status">
-            <Option>Male</Option>
-            <Option>Female</Option>
-          </Select>
-          <FilterText>Marital Status:</FilterText>
-          <Select name="Marital Status">
-            <Option>Single</Option>
-            <Option>Married</Option>
-            <Option>Widowed</Option>
-            <Option>Divorced</Option>
-          </Select>
+      //
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
