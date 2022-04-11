@@ -15,7 +15,7 @@ const Home = () => {
       <Slider />
       <Categories />
       <Products/>
-     
+      
       <Footer/>
     </div>
   );
