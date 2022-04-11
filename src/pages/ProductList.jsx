@@ -60,16 +60,7 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Location:</FilterText>
-          <Select name="provinces" onChange={handleFilters}>
-            <Option disabled>Provinces</Option>
-            <Option>Province 1</Option>
-            <Option>Madesh Province</Option>
-            <Option>Bagmati Province</Option>
-            <Option>Gandaki Province</Option>
-            <Option>Lumbini Province</Option>
-            <Option>Karnali Province</Option>
-            <Option>Sudurpashchim Province</Option>
-          </Select>
+     
           
         </Filter>
         <Filter>
