@@ -180,14 +180,7 @@ const Product = () => {
               </FilterSize>
             </Filter>
           </FilterContainer>
-          <AddContainer>
-            <AmountContainer>
-              <Remove onClick={() => handleQuantity("dec")} />
-              <Amount>{quantity}</Amount>
-              <Add onClick={() => handleQuantity("inc")} />
-            </AmountContainer>
-            <Button onClick={handleClick}>ADD TO CART</Button>
-          </AddContainer>
+     //
         </InfoContainer>
       </Wrapper>
       
