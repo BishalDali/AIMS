@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+//User's Schema
+// This is the schema of how the database stores the user's data 
 const userSchema = new mongoose.Schema(
     {
         username: {

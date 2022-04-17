@@ -1,5 +1,5 @@
-const express = require('express');
-const Crop = require("../models/Crop");
+const express = require('express'); 
+const Crop = require("../models/Crop"); //include crop 
 const {verifyToken, verifyTokenAndAuthorization } = require('./verifyToken');
 const router = express.Router();
 
@@ -7,6 +7,7 @@ const router = express.Router();
 
 
 //Create
+//verify users token and create new Crop by users
 router.post('/',verifyTokenAndAuthorization, async(req,res)=>{
     const newCrop = new Crop(req.body);
 
@@ -21,7 +22,8 @@ router.post('/',verifyTokenAndAuthorization, async(req,res)=>{
 
 
 
-// //Update Crops
+//Update Crops
+//Takes crop's id and update whatever user's update
 router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(
@@ -48,6 +50,7 @@ router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
 
 
 //DELETE
+//Take crop's id and deletes the specific crop
 router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
     try {
       await Crop.findByIdAndDelete(req.params.id);
@@ -57,8 +60,10 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
     }
   });
 
-  //Get Crops
 
+
+//Get Crops
+//take specific crop's id and find that crop
 router.get("/find/:id", async (req, res) => {
     try {
       const crops = await Crop.findById(req.params.id);
@@ -69,6 +74,7 @@ router.get("/find/:id", async (req, res) => {
   });
 
   //GET ALL Crops
+  //Get Multiple Crops
 router.get("/", async (req, res) => {
     const qNew = req.query.new;
     const qCategory = req.query.category;
@@ -76,7 +82,7 @@ router.get("/", async (req, res) => {
       let crops;
   
       if (qNew) {
-        products = await Product.find().sort({ createdAt: -1 }).limit(1);
+        cropss = await Crop.find().sort({ createdAt: -1 }).limit(1);
       } else if (qCategory) {
         crops = await Crop.find({
           categories: {
