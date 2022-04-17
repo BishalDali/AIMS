@@ -82,7 +82,7 @@ router.get("/", async (req, res) => {
       let crops;
   
       if (qNew) {
-        products = await Product.find().sort({ createdAt: -1 }).limit(1);
+        cropss = await Crop.find().sort({ createdAt: -1 }).limit(1);
       } else if (qCategory) {
         crops = await Crop.find({
           categories: {
