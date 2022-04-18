@@ -6,7 +6,7 @@ const router = express.Router();
 
 //Update User Credentials
 //Takes user's id and updates whatever data they wants to update
-router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
+router.put('/:id', async (req,res) =>{
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(  
           req.body.password,

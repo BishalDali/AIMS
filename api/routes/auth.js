@@ -17,6 +17,15 @@ router.post('/register', async (req,res)=>{
          username: req.body.username,
          email: req.body.email,
          password: CryptoJS.AES.encrypt(req.body.password,process.env.PASS_SEC.toString()), // Crypto-js encryption
+         firstName: req.body.firstName,
+         lastName: req.body.lastName,
+         age: req.body.age,
+         gender: req.body.gender,
+         maritalStatus: req.body.maritalStatus,
+         motherName: req.body.motherName,
+         fatherName: req.body.fatherName,
+         spouseName: req.body.spouseName
+
     });
     try {
         const savedUser = await newUser.save();
@@ -58,7 +67,9 @@ router.post("/login", async (req,res) => {
             )
             const {password, ...others} = user._doc;
 
+      
           res.status(200).json({...others,accessToken})
+       
 
             
         } catch (err) {

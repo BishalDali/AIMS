@@ -8,7 +8,7 @@ const router = express.Router();
 
 //Create
 //verify users token and create new Crop by users
-router.post('/',verifyTokenAndAuthorization, async(req,res)=>{
+router.post('/', async(req,res)=>{
     const newCrop = new Crop(req.body);
 
     try {
@@ -24,7 +24,7 @@ router.post('/',verifyTokenAndAuthorization, async(req,res)=>{
 
 //Update Crops
 //Takes crop's id and update whatever user's update
-router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
+router.put('/:id', async (req,res) =>{
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(
           req.body.password,
@@ -51,7 +51,7 @@ router.put('/:id',verifyTokenAndAuthorization, async (req,res) =>{
 
 //DELETE
 //Take crop's id and deletes the specific crop
-router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
       await Crop.findByIdAndDelete(req.params.id);
       res.status(200).json("Crop has been deleted...");

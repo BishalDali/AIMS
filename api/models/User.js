@@ -4,6 +4,18 @@ const mongoose = require("mongoose");
 // This is the schema of how the database stores the user's data 
 const userSchema = new mongoose.Schema(
     {
+        firstName: {
+            type: String,
+            required:true,
+        },
+        lastName: {
+            type: String,
+            required:true,
+        },
+        age: {
+            type: Number,
+            required:true,
+        },
         username: {
             type: String,
             required:true,
@@ -14,10 +26,31 @@ const userSchema = new mongoose.Schema(
             required:true,
             unique:true,
         },
+        fatherName: {
+            type: String,
+            
+        },
+        motherName: {
+            type: String,
+            
+        },
+        spouseName: {
+            type: String,
+            
+        },
         password: {
             type: String,
             required:true,
         },
+        gender: {
+            type: String,
+            required:true,
+        },
+        maritalStatus: {
+            type: String,
+            required:true,
+        },
+        
         isAdmin: {
             type: Boolean,
             default: false,
