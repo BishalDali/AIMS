@@ -1,5 +1,5 @@
 import { Badge } from "@material-ui/core";
-import { Search,ShoppingCartOutlined } from "@material-ui/icons";
+import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
-  background-color: #C3E5AE;
 `;
 
 const Wrapper = styled.div`
@@ -54,7 +53,6 @@ const Logo = styled.h1`
   font-weight: bold;
   ${mobile({ fontSize: "24px" })}
 `;
-
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -71,7 +69,7 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity = useSelector(state=>state.Cart.quantity)
+  const quantity = useSelector(state=>state.cart.quantity)
   return (
     <Container>
       <Wrapper>
@@ -83,26 +81,24 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo><Link to="/">AIMS.</Link></Logo>
+        <Logo><Link to="/">AIMS.</Link></Logo>
         </Center>
         <Right>
-         
-          <MenuItem>
+        <MenuItem>
           <Link to="/register">REGISTER</Link>
           </MenuItem>
           
           <MenuItem>
-          <Link to="/login">Login</Link>
+          <Link to="/login">LOGIN</Link>
           </MenuItem>
-          
-          <Link to="/AddCrop">
+
+          <Link to="/cart">
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
           </Link>
-                 
         </Right>
       </Wrapper>
     </Container>

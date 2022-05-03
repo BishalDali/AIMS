@@ -1,9 +1,9 @@
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
-
+import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
+// import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -155,7 +155,7 @@ const Product = () => {
   return (
     <Container>
       <Navbar />
-      
+      <Announcement />
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -180,16 +180,17 @@ const Product = () => {
               </FilterSize>
             </Filter>
           </FilterContainer>
-     <AddContainer>
+          <AddContainer>
             <AmountContainer>
               <Remove onClick={() => handleQuantity("dec")} />
               <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
             <Button onClick={handleClick}>ADD TO CART</Button>
-          </AddContainer>        </InfoContainer>
+          </AddContainer>
+        </InfoContainer>
       </Wrapper>
-      
+      {/* <Newsletter /> */}
       <Footer />
     </Container>
   );

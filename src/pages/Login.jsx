@@ -4,6 +4,7 @@ import { login } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./login.css"
 
 
 const Container = styled.div`
@@ -61,6 +62,8 @@ const Button = styled.button`
 
 
 
+
+
 const Error = styled.span`
   color: red;
 `;
@@ -81,11 +84,11 @@ const Login = () => {
         <Title>LOGIN</Title>
         <Form>
           <Input
-            placeholder="username"
+            placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
-            placeholder="password"
+            placeholder="Password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -93,8 +96,10 @@ const Login = () => {
             LOGIN
           </Button>
           {error && <Error>Something went wrong...</Error>}
-          <Link>FORGOT PASSWORD?</Link>
-          <Link to="/register">Create New Account.</Link> 
+          <Link className="links">DO NOT YOU REMEMBER THE PASSWORD?</Link>
+          <Link className="links">CREATE A NEW ACCOUNT</Link>
+
+          
         </Form>
       </Wrapper>
     </Container>
