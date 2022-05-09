@@ -48,7 +48,7 @@ const Register = ({ location, history }) => {
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         } else {
-            dispatch(register(name, email, password, cropSelection, fatherName, motherName, spouseName,gender,  maritalStatus, country, address, province))
+            dispatch(register(name, email, password, cropSelection, fatherName, motherName, spouseName, gender, maritalStatus, country, address, province))
         }
     }
 
@@ -110,7 +110,7 @@ const Register = ({ location, history }) => {
                             <Form.Control
                                 type="name"
                                 placeholder="Nepal"
-                                value={'Nepal'}
+                                value={country}
                                 required
                                 onChange={(e) => setCountry(e.target.value)}
                             ></Form.Control>
@@ -231,10 +231,10 @@ const Register = ({ location, history }) => {
         
         
                     <option value="Male" >Male</option>
-
+                    
                     <option value="Female" > Female </option>
                     </select>
-            
+                    
                     </div>
                     </Form.Group>
                         

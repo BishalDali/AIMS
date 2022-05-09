@@ -18,6 +18,14 @@ const authUser = asyncHandler(async (req, res) => {
             email: user.email,
             isAdmin: user.isAdmin,
             cropSelection: user.cropSelection,
+            fatherName: user.fatherName,
+            motherName: user.motherName,
+            spouseName: user.fatherName,
+            gender: user.gender,
+            maritalStatus: user.maritalStatus,
+            country : user.country,
+            province: user.province,
+            address: user.address,
             token: generateToken(user._id)
         })
     } else {
@@ -89,6 +97,14 @@ const getUserProfile = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             cropSelection: user.cropSelection,
+            fatherName: user.fatherName,
+            motherName: user.motherName,
+            spouseName: user.fatherName,
+            gender: user.gender,
+            maritalStatus: user.maritalStatus,
+            country : user.country,
+            province: user.province,
+            address: user.address,
             isAdmin: user.isAdmin,
         })
     } else {

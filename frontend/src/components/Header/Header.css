@@ -30,7 +30,7 @@
 /* Desktop */
 @media only screen and (min-width: 992px) {
     .navbar {
-        width: max-content;
+        width: auto;
         height: 90px;      
     }
     .cart {

@@ -135,25 +135,51 @@ const UserEditScreen = ({ match, history }) => {
                                     onChange={(e) => setSpouseName(e.target.value)}
                                 ></Form.Control>
                             </Form.Group>
-                            <Form.Group controlId='gender'>
-                                <Form.Label>Gender <span style={{ color: 'red' }}>*</span></Form.Label>
-                                <Form.Control
-                                    type="name"
-                                    placeholder="Enter Gender"
-                                    value={gender}
-                                    required
-                                    onChange={(e) => setGender(e.target.value)}
-                                ></Form.Control>
-                            </Form.Group>
-                            <Form.Group controlId='maritalStatus'>
-                                <Form.Label>Marital Status <span style={{ color: 'red' }}>*</span></Form.Label>
-                                <Form.Control
-                                    type="name"
-                                    placeholder="Marital Status"
-                                    value={maritalStatus}
-                                    required
-                                    onChange={(e) => setMaritalStatus(e.target.value)}
-                                ></Form.Control>
+                            <Form.Group>
+                        <Form.Label >Select Gender</Form.Label>
+
+                        <div className='container  p-1'>
+                <select Classname="custom select" 
+                 required
+                onChange={(e) => {
+                    const selectedGender = e.target.value;
+                    setGender(selectedGender)
+                }}
+                
+                >
+                
+        
+        
+                    <option value="Male" >Male</option>
+                    
+                    <option value="Female" > Female </option>
+                    </select>
+                    
+                    </div>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label >Select Your Marital Status</Form.Label>
+
+                        <div className='container  p-1'>
+                <select Classname="custom select" 
+                 required
+                onChange={(e) => {
+                    const selectedMaritalStatus = e.target.value;
+                    setMaritalStatus(selectedMaritalStatus)
+                }}
+                
+                >
+                
+        
+        
+                    <option value="Single" >Single </option>
+                    
+
+                    <option value="Married" > Married </option>
+                    </select>
+                    
+                    </div>
+                    
                             </Form.Group>
                             <Form.Group controlId='country'>
                                 <Form.Label>Country <span style={{ color: 'red' }}>*</span></Form.Label>
@@ -165,16 +191,31 @@ const UserEditScreen = ({ match, history }) => {
                                     onChange={(e) => setCountry(e.target.value)}
                                 ></Form.Control>
                             </Form.Group>
-                            <Form.Group controlId='province'>
-                                <Form.Label>Province <span style={{ color: 'red' }}>*</span></Form.Label>
-                                <Form.Control
-                                    type="name"
-                                    placeholder="Enter Province"
-                                    value={province}
-                                    required
-                                    onChange={(e) => setProvince(e.target.value)}
-                                ></Form.Control>
-                            </Form.Group>
+                            <Form.Group>
+                        <Form.Label >Select Province</Form.Label>
+
+                        <div className='container  p-1'>
+                <select Classname="custom select" 
+                required
+                onChange={(e) => {
+                    const selectedProvince = e.target.value;
+                    setProvince(selectedProvince)
+                }}
+                
+                >
+                
+    
+                <option value="Province 1" >Province 1</option>
+                    <option value="Bagmati" > Bagmati </option>
+                    <option value="Madesh" > Madesh </option>
+                    <option value="Gandaki" > Gandaki </option>
+                    <option value="Lumbini" > Lumbini </option>
+                    <option value="Karnali" > Karnali </option>
+                    <option value="Sudarpashchim" > Sudarpaschim </option>
+                    </select>
+                
+                    </div>
+                    </Form.Group>
                             <Form.Group controlId='address'>
                                 <Form.Label>Address <span style={{ color: 'red' }}>*</span></Form.Label>
                                 <Form.Control

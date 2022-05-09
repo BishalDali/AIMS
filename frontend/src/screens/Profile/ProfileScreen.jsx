@@ -169,7 +169,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Father Name"
                                 value={fatherName}
-                                required
+                                
                                 onChange={(e) => setFatherName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -179,7 +179,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Mother Name"
                                 value={motherName}
-                                required
+                                
                                 onChange={(e) => setMotherName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -189,7 +189,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Spouse Name"
                                 value={spouseName}
-                                required
+                                
                                 onChange={(e) => setSpouseName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -199,7 +199,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Enter your country Name"
                                 value={country}
-                                required
+                                
                                 onChange={(e) => setCountry(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -209,7 +209,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Province Name"
                                 value={province}
-                                required
+                                
                                 onChange={(e) => setProvince(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -219,7 +219,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Enter your full Address"
                                 value={address}
-                                required
+                                
                                 onChange={(e) => setAddress(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -229,7 +229,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Gender"
                                 value={gender}
-                                required
+                                
                                 onChange={(e) => setGender(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -239,7 +239,7 @@ const ProfileScreen = ({ history }) => {
                                 type="name"
                                 placeholder="Marital Status"
                                 value={maritalStatus}
-                                required
+                                
                                 onChange={(e) => setMaritalStatus(e.target.value)}
                             ></Form.Control>
                         </Form.Group>

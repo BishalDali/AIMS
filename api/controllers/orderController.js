@@ -42,7 +42,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
 // @rout    GET /api/orders/:id
 // @access  private
 const getOrderById = asyncHandler(async (req, res) => {
-    const order = await orderSeed.findById(req.params.id).populate('user', 'name email')
+    const order = await orderSeed.findById(req.params.id).populate('userSignup', 'name email')
 
     if (order) {
         res.json(order);

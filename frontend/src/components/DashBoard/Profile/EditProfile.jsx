@@ -51,6 +51,14 @@ const EditProfile = ({ history }) => {
                 setName(user.name)
                 setEmail(user.email)
                 setCropSelection(user.cropSelection)
+                setFatherName(user.fatherName)
+                setMotherName(user.motherName)
+                setSpouseName(user.spouseName)
+                setGender(user.gender)
+                setMaritalStatus(user.maritalStatus)
+                setCountry(user.country)
+                setProvince(user.province)
+                setAddress(user.address)
             }
         }
     }, [userInfo, history, user, dispatch])
@@ -60,7 +68,7 @@ const EditProfile = ({ history }) => {
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         } else {
-            dispatch(updateUserProfile({ id: user._id, name, email, password, cropSelection }))
+            dispatch(updateUserProfile({ id: user._id, name, email, password, cropSelection, fatherName, motherName,spouseName, gender,maritalStatus, country,province,address }))
         }
     }
 
@@ -89,7 +97,7 @@ const EditProfile = ({ history }) => {
                                 type="email"
                                 placeholder="Enter email or NIC"
                                 value={email}
-                                required
+                                
                                 onChange={(e) => setEmail(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -108,7 +116,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Father Name"
                                 value={fatherName}
-                                required
+                               
                                 onChange={(e) => setFatherName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -118,7 +126,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Mother Name"
                                 value={motherName}
-                                required
+                            
                                 onChange={(e) => setMotherName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -128,7 +136,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Spouse Name"
                                 value={spouseName}
-                                required
+                                
                                 onChange={(e) => setSpouseName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -138,7 +146,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Marital Status"
                                 value={maritalStatus}
-                                required
+                               
                                 onChange={(e) => setMaritalStatus(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -169,7 +177,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Enter your country Name"
                                 value={country}
-                                required
+                               
                                 onChange={(e) => setCountry(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -179,7 +187,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Province Name"
                                 value={province}
-                                required
+                                
                                 onChange={(e) => setProvince(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -189,7 +197,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Enter your full Address"
                                 value={address}
-                                required
+                                
                                 onChange={(e) => setAddress(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
@@ -199,7 +207,7 @@ const EditProfile = ({ history }) => {
                                 type="name"
                                 placeholder="Gender"
                                 value={gender}
-                                required
+                                
                                 onChange={(e) => setGender(e.target.value)}
                             ></Form.Control>
                         </Form.Group>

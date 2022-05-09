@@ -6,7 +6,7 @@ import {
     Container,
 } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import {CSVLink} from 'react-csv'
+import {CSVLink} from 'react-csv' 
 import Message from '../..//../components/Message/Message'
 import Loader from '../../../components/Loader/Loader'
 import { listUsers, deleteUsers } from './../../../actions/userActions'
@@ -33,12 +33,17 @@ const UserList = ({ history }) => {
              { label: 'Crop Selection', key : 'cropSelection'},
              { label: 'Country', key : 'country'},
              { label: 'Province', key : 'province'},
-             { label: 'Address', key : 'Address'},
-             { label: 'Gender', key : 'gender'},
+             { label: 'Address', key : 'address'},
              { label: 'Marital Status', key : 'maritalStatus'},
+             { label: 'Gender', key : 'gender'},
 
     ]
 
+    const csvReport ={
+        filename: "UserList.csv",
+        headers: headers,
+        data: users
+    }
     useEffect(() => {
         if (userInfo && userInfo.isAdmin) {
             dispatch(listUsers())
@@ -52,10 +57,11 @@ const UserList = ({ history }) => {
             dispatch(deleteUsers(id))
         }
     }
+    console.log(users,'dfd');
 
     return (
         <div>
-            <Button className="ml-3 mb-3">Download</Button>
+            {!loading&&<CSVLink {...csvReport}><Button className="ml-3 mb-3">Download</Button></CSVLink>}
             <LinkContainer style={{ float: 'right' }} to='/register'>
                 <Button className="mr-3 mb-3">ADD ADMIN</Button>
                 
@@ -74,8 +80,9 @@ const UserList = ({ history }) => {
                                         <td>FATHER NAME</td>
                                         <td>MOTHER NAME</td>
                                         <td>SPOUSE NAME</td>
-                                        <td>GENDER</td>
+                                       
                                         <td>MARITAL STATUS</td>
+                                        <td>GENDER</td>
                                         <td>COUNTRY</td>
                                         <td>PROVINCE</td>
                                         <td>ADDRESS</td>

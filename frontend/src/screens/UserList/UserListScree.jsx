@@ -36,6 +36,7 @@ const UserListScreen = ({ history }) => {
             dispatch(deleteUsers(id))
         }
     }
+ 
 
     return (
         <div style={{ marginTop: '120px' }}>
