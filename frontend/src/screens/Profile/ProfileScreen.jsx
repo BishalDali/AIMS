@@ -78,7 +78,11 @@ const ProfileScreen = ({ history }) => {
                 setSpouseName(user.spouseName)
                 setGender(user.gender)
                 setMaritalStatus(user.maritalStatus)
+ 
                 setCountry("Nepal")
+
+                setCountry(user.country)
+ 
                 setProvince(user.province)
                 setAddress(user.address)
 
@@ -87,12 +91,20 @@ const ProfileScreen = ({ history }) => {
     }, [userInfo, history, user, dispatch])
 
     const submitHandler = (e) => {
+ 
     console.log(user._id, name, email, password, cropSelection,  fatherName, motherName, spouseName, maritalStatus, gender, country, address, province);
+
+    
+ 
         e.preventDefault()
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         } else {
+ 
             dispatch(updateUserProfile({ id: user._id, name, email, password, cropSelection,  fatherName, motherName, spouseName, maritalStatus, gender, country, address, province }))
+
+            dispatch(updateUserProfile({ id: user._id, name, email, password, cropSelection,  fatherName, motherName, spouseName, maritalStatus, gender,country, address, province }))
+ 
         }
     }
 
@@ -197,6 +209,7 @@ const ProfileScreen = ({ history }) => {
                             <Form.Label>Country <span style={{ color: 'red' }}>*</span></Form.Label>
                             <Form.Control
                                 type="name"
+ 
                                 // placeholder="Enter your country Name"
                                 value={'Nepal'}
                                 contentEditable = {false}
@@ -228,6 +241,24 @@ const ProfileScreen = ({ history }) => {
                 
                     </div>
                     </Form.Group>
+
+                                placeholder="Enter your country Name"
+                                value={country}
+                                
+                                onChange={(e) => setCountry(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId='province'>
+                            <Form.Label>Province <span style={{ color: 'red' }}>*</span></Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Province Name"
+                                value={province}
+                                
+                                onChange={(e) => setProvince(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+ 
                         <Form.Group controlId='address'>
                             <Form.Label>Address Line<span style={{ color: 'red' }}>*</span></Form.Label>
                             <Form.Control
@@ -238,6 +269,7 @@ const ProfileScreen = ({ history }) => {
                                 onChange={(e) => setAddress(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
+ 
                         <Form.Group>
                         <Form.Label >Select Gender</Form.Label>
 
@@ -283,6 +315,28 @@ const ProfileScreen = ({ history }) => {
                     
                     </div>
                     </Form.Group>
+=======
+                        <Form.Group controlId='gender'>
+                            <Form.Label>Gender <span style={{ color: 'red' }}>*</span></Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Gender"
+                                value={gender}
+                                
+                                onChange={(e) => setGender(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId='marital Status'>
+                            <Form.Label>Marital Status <span style={{ color: 'red' }}>*</span></Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Marital Status"
+                                value={maritalStatus}
+                                
+                                onChange={(e) => setMaritalStatus(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+ 
                         <Button type="submit" variant="primary">Update</Button>
                     </Form>
                 </Col>

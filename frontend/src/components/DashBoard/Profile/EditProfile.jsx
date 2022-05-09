@@ -140,6 +140,7 @@ const EditProfile = ({ history }) => {
                                 onChange={(e) => setSpouseName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
+
                         <Form.Group>
                         <Form.Label >Select Your Marital Status</Form.Label>
 
@@ -164,6 +165,17 @@ const EditProfile = ({ history }) => {
                     </div>
                     
                             </Form.Group>
+                        <Form.Group controlId='marital Status'>
+                            <Form.Label>Marital Status <span style={{ color: 'red' }}>*</span></Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Marital Status"
+                                value={maritalStatus}
+                               
+                                onChange={(e) => setMaritalStatus(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+
                     </Col>
                     <Col md={5}>
                         <Form.Group controlId='password'>
@@ -195,6 +207,7 @@ const EditProfile = ({ history }) => {
                                 onChange={(e) => setCountry(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
+
                         <Form.Group>
                         <Form.Label >Select Province</Form.Label>
 
@@ -220,6 +233,18 @@ const EditProfile = ({ history }) => {
                 
                     </div>
                     </Form.Group>
+
+                        <Form.Group controlId='province'>
+                            <Form.Label>Province <span style={{ color: 'red' }}>*</span></Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Province Name"
+                                value={province}
+                                
+                                onChange={(e) => setProvince(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+
                         <Form.Group controlId='address'>
                             <Form.Label>Address Line<span style={{ color: 'red' }}>*</span></Form.Label>
                             <Form.Control
@@ -230,6 +255,7 @@ const EditProfile = ({ history }) => {
                                 onChange={(e) => setAddress(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
+
                         <Form.Group>
                         <Form.Label >Select Gender</Form.Label>
 
@@ -252,6 +278,18 @@ const EditProfile = ({ history }) => {
 
                             </div>
                             </Form.Group>
+
+                        <Form.Group controlId='gender'>
+                            <Form.Label>Gender <span style={{ color: 'red' }}>*</span></Form.Label>
+                            <Form.Control
+                                type="name"
+                                placeholder="Gender"
+                                value={gender}
+                                
+                                onChange={(e) => setGender(e.target.value)}
+                            ></Form.Control>
+                        </Form.Group>
+
                         
                     </Col>
                 </Row>

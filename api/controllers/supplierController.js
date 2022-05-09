@@ -16,7 +16,9 @@ const createSupplierProduct = asyncHandler(async (req, res) => {
         cropSelection,
         storage,
         image,
+
         price,
+
         phonenumber,
         description
     } = req.body
@@ -51,7 +53,9 @@ const createSupplierProduct = asyncHandler(async (req, res) => {
                 longitude: latAndLong.longitude,
                 latitude: latAndLong.latitude,
                 image,
+
                 price,
+
                 phonenumber,
                 description,
             })
@@ -175,7 +179,9 @@ const updateSupplierProductProfile = asyncHandler(async (req, res) => {
         product.image = req.body.image || product.image
         product.phonenumber = req.body.phonenumber || product.phonenumber
         product.description = req.body.description || product.description
+
         product.price = req.body.price || product.price
+
         product.cropSelection = req.body.cropSelection || product.cropSelection
 
         let options = {
@@ -215,7 +221,9 @@ const updateSupplierProductProfile = asyncHandler(async (req, res) => {
             longitude: updatedproduct.longitude,
             latitude: updatedproduct.latitude,
             cropSelection: updatedproduct.cropSelection,
+
             price: updatedproduct.price,
+
             token: generateToken(updatedproduct._id)
         })
 

@@ -16,9 +16,13 @@ import {
     CONSUMER_UPDATE_SUCCESS,
     CONSUMER_UPDATE_FAIL,
     CONSUMER_UPDATE_RESET
+ 
     
 } from '../constants/productConstants'
 import { MARKET_PRICE_LIST_FAIL, MARKET_PRICE_LIST_REQUEST, MARKET_PRICE_LIST_SUCCESS } from '../constants/supplierConstant'
+
+} from '../constants/productConstants'
+ 
 
 export const consumerProductListReducer = (state = { consumerProducts: [] }, action) => {
     switch (action.type) {
@@ -32,6 +36,7 @@ export const consumerProductListReducer = (state = { consumerProducts: [] }, act
             return state
     }
 }
+ 
 export const marketPriceReducer = (state = { marketPrice: [] }, action) => {
     switch (action.type) {
         case MARKET_PRICE_LIST_REQUEST:
@@ -44,6 +49,9 @@ export const marketPriceReducer = (state = { marketPrice: [] }, action) => {
             return state
     }
 }
+
+
+ 
 export const consumerProductDetailsReducer = (state = { consumerProduct: { reviews: [] } }, action) => {
     switch (action.type) {
         case CONSUMER_PRODUCT_DETAILS_REQUEST:

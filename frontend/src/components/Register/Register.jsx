@@ -43,7 +43,8 @@ const Register = ({ location, history }) => {
     }, [userInfo, history, redirect])
 
     const submitHandler = (e) => {
-    
+
+  
         e.preventDefault()
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')

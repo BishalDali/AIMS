@@ -15,7 +15,10 @@ const HomeScreen = () => {
             <CardMenu />
             <OurServices />
             <GenralMap />
+ 
             
+
+ 
         </>
     )
 }
