@@ -10,23 +10,17 @@ import './ourSerices.css'
 const OurServices = () => {
     return (
         <Container className="main" fluid>
-            <h1 className="main-title">COMPREHENSIVE SERVICES</h1>
+            <h1 className="main-title">OUR SERVICES</h1>
             <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac nunc non arcu aliquet sollicitudin. Sed elementum placerat ex. Donec a lectus vel lectus faucibus mattis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac nunc non arcu aliquet sollicitudin. Sed elementum placerat ex. Donec a lectus vel lectus faucibus mattis
-            </p>
+            बारी provides connections between different roles in the agricultural industry. It ensure farmers to have the fair price for their crops and can buy the equipment and rent the machineries. Consumers can buy product from the बारी.</p>
             <Container className="services">
                 <Row>
                     <Col md={3}>
-                        <h5 className="sub-title">Heavy Machine</h5>
+                        <h5 className="sub-title">Rent Machinery</h5>
                         <Image className="img" src="images/services/heavy.svg" fluid />
                         <p className="sub-desc">No need to worry of labour costing more. Just rent all types of machine here!!</p>
                     </Col>
-                    <Col md={3}>
-                        <h5 className="sub-title">Gardening Kits</h5>
-                        <Image className="img" src="images/services/gardening.svg" fluid />
-                        <p className="sub-desc">We provides all of the gardening related products i.e seeds, pestisides and heavy machine.</p>
-                    </Col>
+                  
                     <Col md={3}>
                         <h5 className="sub-title">Supplier</h5>
                         <Image className="img" src="images/services/supplier.svg" fluid />

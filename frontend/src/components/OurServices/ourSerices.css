@@ -1,4 +1,5 @@
 .main {
+
     background-color: rgb(240, 235, 235);
     padding: 4%
 }
@@ -20,7 +21,14 @@
 }
 
 .services {
+    
     margin-top: 50px;
+  
+    top: 50%;
+    left: 50%;
+    margin-right: -2%;
+   
+   
 }
 
 .img {

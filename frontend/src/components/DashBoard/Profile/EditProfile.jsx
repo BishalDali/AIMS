@@ -140,16 +140,30 @@ const EditProfile = ({ history }) => {
                                 onChange={(e) => setSpouseName(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId='marital Status'>
-                            <Form.Label>Marital Status <span style={{ color: 'red' }}>*</span></Form.Label>
-                            <Form.Control
-                                type="name"
-                                placeholder="Marital Status"
-                                value={maritalStatus}
-                               
-                                onChange={(e) => setMaritalStatus(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                        <Form.Group>
+                        <Form.Label >Select Your Marital Status</Form.Label>
+
+                        <div className='container  p-1'>
+                <select Classname="custom select" 
+                 required
+                onChange={(e) => {
+                    const selectedMaritalStatus = e.target.value;
+                    setMaritalStatus(selectedMaritalStatus)
+                }}
+                
+                >
+                
+        
+        
+                    <option value="Single" >Single </option>
+                    
+
+                    <option value="Married" > Married </option>
+                    </select>
+                    
+                    </div>
+                    
+                            </Form.Group>
                     </Col>
                     <Col md={5}>
                         <Form.Group controlId='password'>
@@ -181,16 +195,31 @@ const EditProfile = ({ history }) => {
                                 onChange={(e) => setCountry(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId='province'>
-                            <Form.Label>Province <span style={{ color: 'red' }}>*</span></Form.Label>
-                            <Form.Control
-                                type="name"
-                                placeholder="Province Name"
-                                value={province}
-                                
-                                onChange={(e) => setProvince(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                        <Form.Group>
+                        <Form.Label >Select Province</Form.Label>
+
+                        <div className='container  p-1'>
+                <select Classname="custom select" 
+                required
+                onChange={(e) => {
+                    const selectedProvince = e.target.value;
+                    setProvince(selectedProvince)
+                }}
+                
+                >
+                
+    
+                <option value="Province 1" >Province 1</option>
+                    <option value="Bagmati" > Bagmati </option>
+                    <option value="Madesh" > Madesh </option>
+                    <option value="Gandaki" > Gandaki </option>
+                    <option value="Lumbini" > Lumbini </option>
+                    <option value="Karnali" > Karnali </option>
+                    <option value="Sudarpashchim" > Sudarpaschim </option>
+                    </select>
+                
+                    </div>
+                    </Form.Group>
                         <Form.Group controlId='address'>
                             <Form.Label>Address Line<span style={{ color: 'red' }}>*</span></Form.Label>
                             <Form.Control
@@ -201,16 +230,28 @@ const EditProfile = ({ history }) => {
                                 onChange={(e) => setAddress(e.target.value)}
                             ></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId='gender'>
-                            <Form.Label>Gender <span style={{ color: 'red' }}>*</span></Form.Label>
-                            <Form.Control
-                                type="name"
-                                placeholder="Gender"
-                                value={gender}
-                                
-                                onChange={(e) => setGender(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                        <Form.Group>
+                        <Form.Label >Select Gender</Form.Label>
+
+                            <div className='container  p-1'>
+                            <select Classname="custom select" 
+                            required
+                            onChange={(e) => {
+                            const selectedGender = e.target.value;
+                            setGender(selectedGender)
+                            }}
+
+                            >
+
+
+
+                            <option value="Male" >Male</option>
+
+                            <option value="Female" > Female </option>
+                            </select>
+
+                            </div>
+                            </Form.Group>
                         
                     </Col>
                 </Row>

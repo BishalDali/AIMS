@@ -11,6 +11,10 @@ import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import supplierRoutes from './routes/supplierRoutes.js'
+import marketPrice from './routes/marketPrice.js'
+// import cropMarketPrice from './routes/marketPrice.js'
+
+
 
 dotenv.config('./../.env');
 
@@ -29,9 +33,12 @@ app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/supplier', supplierRoutes);
+app.use('/api/marketPrice', marketPrice);
 
 // PAYPAL 
 app.get('/api/config/paypal', (req, res) => res.send(process.env.PAYPAL_CLIENT_ID))
+
+
 
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
