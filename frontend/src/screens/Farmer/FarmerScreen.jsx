@@ -39,7 +39,7 @@ const FarmerScreen = () => {
                         </Card>
                         <Card border="primary" style={{ width: '25rem' }}>
                             <Card.Body>
-                                <Card.Title className="card-titile">Lend All of Heavy Machine And Tractros</Card.Title>
+                                <Card.Title className="card-titile">LEND All THE MACHINERY </Card.Title>
                                 <LinkContainer to="/farmers/lendMachines">
                                     <Button className="btn-explore btn-md m-2">EXPLORE MORE</Button>
                                 </LinkContainer>

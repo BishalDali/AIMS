@@ -21,7 +21,7 @@ import {
 } from '../constants/productConstants'
 import { MARKET_PRICE_LIST_FAIL, MARKET_PRICE_LIST_REQUEST, MARKET_PRICE_LIST_SUCCESS } from '../constants/supplierConstant'
 
-} from '../constants/productConstants'
+
  
 
 export const consumerProductListReducer = (state = { consumerProducts: [] }, action) => {

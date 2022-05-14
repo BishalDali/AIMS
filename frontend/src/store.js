@@ -34,9 +34,9 @@ import {
     consumerCreateReducer,
  
     consumerUpdateReducer,
-    marketPriceReducer
+    marketPriceReducer,
 
-    consumerUpdateReducer
+  
  
 } from './reducers/consumerProductsReducer'
 import {

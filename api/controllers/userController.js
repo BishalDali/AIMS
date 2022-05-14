@@ -151,14 +151,14 @@ console.log(req.body,'body');
             isAdmin: updatedUser.isAdmin,
             cropSelection: updatedUser.cropSelection,
 
-            fatherName: user.fatherName,
-            motherName: user.motherName,
-            spouseName: user.fatherName,
-            gender: user.gender,
-            maritalStatus: user.maritalStatus,
-            country : user.country,
-            province: user.province,
-            address: user.address,
+            fatherName: updatedUser.fatherName,
+            motherName: updatedUser.motherName,
+            spouseName: updatedUser.fatherName,
+            gender: updatedUser.gender,
+            maritalStatus: updatedUser.maritalStatus,
+            country : updatedUser.country,
+            province: updatedUser.province,
+            address: updatedUser.address,
 
             token: generateToken(updatedUser._id)
         })
@@ -235,14 +235,14 @@ const updateUser = asyncHandler(async (req, res) => {
             isAdmin: updatedUser.isAdmin,
             cropSelection: updatedUser.cropSelection,
 
-            fatherName: user.fatherName,
-            motherName: user.motherName,
-            spouseName: user.fatherName,
-            gender: user.gender,
-            maritalStatus: user.maritalStatus,
-            country : user.country,
-            province: user.province,
-            address: user.address,
+            fatherName: updateUser.fatherName,
+            motherName: updateUser.motherName,
+            spouseName: updateUser.fatherName,
+            gender: updateUser.gender,
+            maritalStatus: updateUser.maritalStatus,
+            country : updateUser.country,
+            province: updateUser.province,
+            address: updateUser.address,
 
         })
     } else {
