@@ -127,6 +127,7 @@ console.log(req.body,'body');
         user.email = req.body.email || user.email
         user.cropSelection = req.body.cropSelection || user.cropSelection
 
+        // added fixes to bug
         user.fatherName = req.body.fatherName || user.fatherName
         user.motherName = req.body.motherName || user.motherName
         user.spouseName = req.body.spouseName || user.spouseName

@@ -68,13 +68,14 @@ const Map = () => {
                             setSelectedPlace(null)
                         }}
                     >
+                        {/* Bug Fix */}
                         <div>
                             <Image className="mx-auto d-block img-fluid mb-1" rounded width="120px" src={selectedPlace.image} alt={selectedPlace.name} />
                             <h4 style={{ textAlign: "center" }}>{selectedPlace.cropSelection}</h4>
                             <p>
                                 Description: {selectedPlace.description}<br />
                                 Phone Number: {selectedPlace.phonenumber}<br />
-                                Farmer Price: {selectedPlace.price}<br />
+                                Farmer Price: {selectedPlace.price}<br /> 
                                 {
                                     selectedPlace.isReviwed
                                         ? (<>
