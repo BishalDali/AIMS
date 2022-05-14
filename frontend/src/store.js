@@ -32,7 +32,12 @@ import {
     consumerProductDetailsReducer,
     consumerProductDeleteReducer,
     consumerCreateReducer,
-    consumerUpdateReducer
+ 
+    consumerUpdateReducer,
+    marketPriceReducer,
+
+  
+ 
 } from './reducers/consumerProductsReducer'
 import {
     orderCreateReducer,
@@ -81,6 +86,11 @@ const reducer = combineReducers({
     farmerReviewCreate: farmerReviewCreateReducer,
     farmerProductUpdate: farmerProductUpdateReducer,
     supplierProductForAllList: supplierProductForAllListReducer,
+
+ 
+
+    marketPrice: marketPriceReducer,
+
 
     cartSeed: cartSeedReducer,
 

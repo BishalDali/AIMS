@@ -119,10 +119,26 @@ const getUserProfile = asyncHandler(async (req, res) => {
 const updateUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id)
 
+console.log(req.body,'body');
+
+
     if (user) {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
         user.cropSelection = req.body.cropSelection || user.cropSelection
+
+        // added fixes to bug
+        user.fatherName = req.body.fatherName || user.fatherName
+        user.motherName = req.body.motherName || user.motherName
+        user.spouseName = req.body.spouseName || user.spouseName
+        user.gender = req.body.gender || user.gender
+        user.maritalStatus = req.body.maritalStatus || user.maritalStatus
+        user.country = req.body.country || user.country
+        user.province = req.body.province || user.province
+        user.address = req.body.address || user.address
+
+            
+
         if (req.body.password) {
             user.password = req.body.password
         }
@@ -135,6 +151,16 @@ const updateUserProfile = asyncHandler(async (req, res) => {
             email: updatedUser.email,
             isAdmin: updatedUser.isAdmin,
             cropSelection: updatedUser.cropSelection,
+
+            fatherName: updatedUser.fatherName,
+            motherName: updatedUser.motherName,
+            spouseName: updatedUser.fatherName,
+            gender: updatedUser.gender,
+            maritalStatus: updatedUser.maritalStatus,
+            country : updatedUser.country,
+            province: updatedUser.province,
+            address: updatedUser.address,
+
             token: generateToken(updatedUser._id)
         })
     } else {
@@ -189,6 +215,16 @@ const updateUser = asyncHandler(async (req, res) => {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
         user.cropSelection = req.body.cropSelection || user.cropSelection
+
+        user.fatherName = req.body.fatherName || user.fatherName
+        user.motherName = req.body.motherName || user.motherName
+        user.spouseName = req.body.spouseName || user.spouseName
+        user.gender = req.body.gender || user.gender
+        user.maritalStatus = req.body.maritalStatus || user.maritalStatus
+        user.country = req.body.country || user.country
+        user.province = req.body.province || user.province
+        user.address = req.body.address || user.address
+
         user.isAdmin = req.body.isAdmin
 
         const updatedUser = await user.save()
@@ -199,6 +235,16 @@ const updateUser = asyncHandler(async (req, res) => {
             email: updatedUser.email,
             isAdmin: updatedUser.isAdmin,
             cropSelection: updatedUser.cropSelection,
+
+            fatherName: updateUser.fatherName,
+            motherName: updateUser.motherName,
+            spouseName: updateUser.fatherName,
+            gender: updateUser.gender,
+            maritalStatus: updateUser.maritalStatus,
+            country : updateUser.country,
+            province: updateUser.province,
+            address: updateUser.address,
+
         })
     } else {
         res.status(401)

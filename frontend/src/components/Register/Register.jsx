@@ -23,11 +23,11 @@ const Register = ({ location, history }) => {
     const [fatherName, setFatherName] = useState('')
     const [motherName, setMotherName] = useState('')
     const [spouseName, setSpouseName] = useState('')
-    const [country, setCountry] = useState('')
-    const [province, setProvince] = useState('')
+    const [country, setCountry] = useState('Nepal')
+    const [province, setProvince] = useState('Province 1')
     const [address, setAddress] = useState('')
-    const [gender, setGender] = useState('')
-    const [maritalStatus, setMaritalStatus] = useState('')
+    const [gender, setGender] = useState('Male')
+    const [maritalStatus, setMaritalStatus] = useState('Single')
     const [message, setMessage] = useState(null)
 
     const dispatch = useDispatch()
@@ -43,7 +43,8 @@ const Register = ({ location, history }) => {
     }, [userInfo, history, redirect])
 
     const submitHandler = (e) => {
-     
+
+  
         e.preventDefault()
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
@@ -110,8 +111,9 @@ const Register = ({ location, history }) => {
                             <Form.Control
                                 type="name"
                                 placeholder="Nepal"
-                                value={country}
+                                value={"Nepal"}
                                 required
+
                                 onChange={(e) => setCountry(e.target.value)}
                             ></Form.Control>
                         </Form.Group>

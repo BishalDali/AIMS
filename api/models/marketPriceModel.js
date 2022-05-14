@@ -5,6 +5,17 @@ const marketPriceSchema = mongoose.Schema({
     cropName: {
         type: String,
         required: true,
+
+        
+    },
+    province: {
+        type: String,
+        required: true
+    
+    },
+    price: {
+        type: String,
+
         unique: true
     },
     province: {
