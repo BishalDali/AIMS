@@ -87,9 +87,9 @@ const Navbar = () => {
         </Center>
         <Right>
          
-          <MenuItem>
+          {/* <MenuItem>
           <Link to="/register">REGISTER</Link>
-          </MenuItem>
+          </MenuItem> */}
           
           <MenuItem>
           <Link to="/login">Login</Link>
