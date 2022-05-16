@@ -91,9 +91,9 @@ const Navbar = () => {
           <Link to="/register">REGISTER</Link>
           </MenuItem>
           
-          {/* <MenuItem>
+          <MenuItem>
           <Link to="/login">Login</Link>
-          </MenuItem> */}
+          </MenuItem>
           
           <Link to="/AddCrop">
           <MenuItem>
